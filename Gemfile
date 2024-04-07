@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-ruby "3.3.0"
+ruby "3.2.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
@@ -26,6 +26,21 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem "haml-rails", "~> 2.0"
+
+gem "html2haml"
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'rails-asset-jqueryui'
+gem 'sass-rails'
+gem 'bootstrap-sass', '3.3.7'
+gem 'font-awesome-sass', '~> 6.5.2'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem 'will_paginate'
+gem 'kaminari'
+gem 'turbolinks'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -46,7 +61,12 @@ gem "bootsnap", require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  # gem "debug", platforms: %i[ mri windows ]
+  gem 'byebug', platform: :mri
+  
+  # Лучше отображает ошибки
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development do
