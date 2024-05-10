@@ -18,4 +18,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # work
+  match 'work',             to: 'work#index',             via: :get
+  match 'choose_theme',     to: 'work#choose_theme',      via: :get
+  match 'display_theme',    to: 'work#display_theme',     via: :post
+
+  root 'work#index'
 end

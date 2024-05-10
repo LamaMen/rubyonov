@@ -1,2 +1,47 @@
-<h1>Work#index</h1>
-<p>Find me in app/views/work/index.html.erb</p>
+<div class="image">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="left_controls">
+        <div class="select_theme">
+          <%= render 'work/button_theme_select' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="image_display">
+        <div class="row image">
+          <div class="col-md-12">
+            <h2 class="up-theme" title="theme_name">
+              <%= @selected_theme %>
+            </h2>
+          </div>
+          <div class="col-md-12">
+            <h2 class="up" title="Image file name">
+              <%= @selected_image_name %>
+            </h2>
+          </div>
+          <div class="col-md-1">
+            <div class="img-left-side">
+              <h3 title="list to previous image">
+                <i class="fa fa-chevron-circle-left strong"></i>
+              </h3>
+            </div>
+          </div>
+          <div class="col-md-10">
+            <div class="img-center" title="Default image">
+              <img alt="Default Image" title="Default image" src="assets/pictures/honor_8x.jpg" style="width:60%; height:80%;"/>
+            </div>
+            <div class="image_user_value" title="Expert value"></div>
+          </div>
+          <div class="col-md-1">
+            <div class="img-right-side">
+              <h3 title="list to next image">
+                <i class="fa fa-chevron-circle-right"></i>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
