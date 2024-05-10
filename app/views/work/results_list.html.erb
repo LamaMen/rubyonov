@@ -1,0 +1,32 @@
+<% if @composite_results.blank? %>
+    <table style="table-layout: auto" title="No Values results">
+        <div class="results">
+            <h2>no_values</h2>
+            <h2>select_theme</h2>
+        </div>
+    </table>
+<% else %>
+    <table style="table-layout: auto;" title="All images expert values">
+        <div class="results">
+            <h2>All images expert values</h2>
+        </div>
+
+        <tr style="font-size: 2em; margin-bottom: .5em">
+            <th class="name">Image name</th>
+            <th>Image</th>
+            <th>Value</th>
+            <th>date</th>
+        </tr>
+        <% @composite_results_paged.each do |composite_diag| %>
+            <tr class="one_row">
+                <td style="text-align: left; width: 25em"><%= composite_diag.name %></td>
+                <td><%= image_tag('/assets/pictures/' + composite_diag.file, {:width => "53", :height =>"47", title: "Tested image"} ) %></td>
+                <td style="color: rgba(122, 13, 75, 1);"><%= composite_diag.ave_value %></td>
+                <td><%= composite_diag.created_at.strftime('%d.%m.%y ') %></td>
+            </tr>
+        <% end %>
+    </table>
+
+    <%= paginate @composite_results_paged %>
+    <%= link_to "return_to_main", work_path,  class: "btn btn-lg btn-primary", title: "Go to main page" %>
+<% end %>

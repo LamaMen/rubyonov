@@ -4,7 +4,17 @@
       <div class="left_controls">
         <div class="select_theme">
           <%= render 'work/button_theme_select' %>
+          <br/>
         </div>
+        
+        <div class="modal_list_results">
+          <%= render 'work/button_list_results' %>
+          <br/>
+        </div>
+
+        <span class="common_value">common_value <h2 class="common" title="Common value"></h2> </span>
+        <span class="total_values">total_values <h2 class="total" title="Total values"></h2><%= @values_qty.round %></span>
+
       </div>
     </div>
     <div class="col-md-9">
