@@ -10,6 +10,13 @@ Rails.application.routes.draw do
   get 'main/help'
   get 'main/contacts'
   get 'main/about'
+
+  namespace :api, defaults: { format: :json } do
+      match 'next_image',       to: 'api#next_image',   via: 'get'
+      match 'prev_image',       to: 'api#prev_image',   via: 'get'
+      match 'save_value',       to: 'api#save_value',   via: :get
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
