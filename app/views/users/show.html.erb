@@ -1,10 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<div class="show_user">
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <h1><%= gravatar_for @user %> <%= @user.name %></h1>
+      </section>
+    </aside>
+  </div>
+  <p>
+    <b>Email</b> <%= @user.email %>
+  </p>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%= link_to "Work", work_path, class: "btn btn-lg btn-primary" %>
 </div>

@@ -1,15 +1,69 @@
 <div class="container">
-    <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to "Главная", main_index_path, class: "nav-link px-2" %></li>
-        <li><%= link_to "Контакты", main_contacts_path, class: "nav-link px-2" %></li>
-        <li><%= link_to "FAQs", main_help_path, class: "nav-link px-2" %></li>
-        <li><%= link_to "About", main_about_path, class: "nav-link px-2" %></li>
-      </ul>
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li>
+        <%= link_to "Главная" , main_index_path, class: "nav-link px-2" %>
+      </li>
+      <li>
+        <%= link_to "Контакты" , main_contacts_path, class: "nav-link px-2" %>
+      </li>
+      <li>
+        <%= link_to "FAQs" , main_help_path, class: "nav-link px-2" %>
+      </li>
+      <li>
+        <%= link_to "About" , main_about_path, class: "nav-link px-2" %>
+      </li>
+    </ul>
 
-      <div class="col-md-3 text-end">
-        <button type="button" class="btn btn-outline-primary me-2">Login</button>
-        <button type="button" class="btn btn-primary">Sign-up</button>
+    <div>
+      <% if signed_in? %>
+        <div class="dropdown text-end">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <%= gravatar_for current_user, "32x32" %>
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li>
+              <%= link_to "Profile", current_user, class: "dropdown-item" %>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <%= link_to "Sign out" , signout_path, method: "delete", class: "dropdown-item" %>
+          </ul>
+        </div>
+    </div>
+
+
+    <!-- <li class="logged">
+      <%= current_user.email %>
+    </li>
+    <%= gravatar_for current_user %>
+      <li id="fat-menu" class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+          <p>person <b class="caret"></b></p>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to "Profile" , current_user %>
+          </li>
+          <li>
+            <%= link_to "Settings" , '#' %>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <%= link_to "Sign out" , signout_path, method: "delete" %>
+          </li>
+        </ul>
+      </li> -->
+    <% else %>
+      <div class="text-end">
+        <li>
+          <%= link_to "Sign-in" , signin_path %>
+        </li>
       </div>
-    </header>
-  </div>
+    <% end %>
+</div>
+</header>
+</div>
