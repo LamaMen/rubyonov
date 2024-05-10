@@ -29,3 +29,12 @@
 
 en:
   hello: "Hello world"
+  shared:
+    header:
+      logo_title: "Experteese in Ruby_on_Rails"
+      home: "Home"
+      help: "Help"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+      sign_out: "Sign out"
+      profile: "My page"

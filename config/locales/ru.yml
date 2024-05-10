@@ -1,0 +1,10 @@
+ru:
+  shared:
+    header:
+      logo_title: "Experteese на Ruby_on_Rails"
+      home: "Главная"
+      help: "Помощь"
+      sign_in: "Войти"
+      sign_up: "Зарегистрироваться"
+      sign_out: "Выйти"
+      profile: "Моя страница"
