@@ -4,17 +4,14 @@
       <div class="left_controls">
         <div class="select_theme">
           <%= render 'work/button_theme_select' %>
-          <br/>
         </div>
-        
+
         <div class="modal_list_results">
           <%= render 'work/button_list_results' %>
-          <br/>
         </div>
 
-        <span class="common_value">common_value <h2 class="common" title="Common value"></h2> </span>
-        <span class="total_values">total_values <h2 class="total" title="Total values"></h2><%= @values_qty.round %></span>
-
+        <span class="common_value" style="display: none;"><%= t('.common_value') %> <h2 class="common" title="Common value"></h2> </span>
+        <span class="total_values"><%= t('.total_values') %> <h2 class="total" title="Total values"><%= @values_qty.round %></h2></span>
       </div>
     </div>
     <div class="col-md-9">
@@ -39,10 +36,10 @@
           </div>
           <div class="col-md-10">
             <div class="img-center" title="Default image">
-              <img alt="Default Image" title="Default image" src="assets/pictures/honor_8x.jpg"
-                style="width:60%; height:80%;" />
+              <img alt="Default Image" title="Default image" src="/assets/pictures/honor_8x.jpg"
+                style="object-fit: contain; height: 60vh; width: 100%;" />
             </div>
-            <div class="image_user_value" title="Expert value"></div>
+            <!-- <div class="image_user_value" title="Expert value"></div> -->
           </div>
           <div class="col-md-1">
             <div class="img-right-side">
