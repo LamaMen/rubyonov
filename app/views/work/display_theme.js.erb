@@ -25,13 +25,14 @@ if (userValuedFlag == 1) {
 
 // show theme
 var selectedTheme = '<%= @image_data[:theme] %>';
-
 if (selectedTheme == "Выберите тему для оценки" || selectedTheme == "Select theme to leave your answer" || selectedTheme == "") {
   $('.img-left-side').css({ "display": "none" });
+  $('.img-center').css({ "display": "none" });
   $('.img-right-side').css({ "display": "none" });
   $('.image .image_display .image_diag').css({ "display": "none" });
 } else {
   $('.img-left-side').css({ "display": "block" });
+  $('.img-center').css({ "display": "block" });
   $('.img-right-side').css({ "display": "block" });
   $('.image .image_display .image_diag').css({ "display": "block" });
 }
@@ -64,6 +65,9 @@ var pathImage = "/assets/pictures/" + oneImageFile;
 $(".img-center").attr({ title: "Selected image" });
 $(".img-center img").attr({ alt: "Selected Image", src: pathImage, title: "Selected image" });
 
+
+// -----------------------
+
 // AJAX call to next image list
 $('.img-right-side').click(function (event) {
   event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
@@ -91,7 +95,7 @@ $('.img-right-side').click(function (event) {
     var userValuedFlag = data_return.user_valued;
     if (userValuedFlag == 1) {
       $('.left_controls span.common_value').css({ "display": "block" });
-      var imageValue = data_return.value;
+      var imageValue = 'Value:' + data_return.value;
       $('.image .image_display .image_user_value').append().html(imageValue).css({ "display": "block" });
       $('.image .image_display .image_diag').css({ "display": "none" });
 
@@ -137,7 +141,7 @@ $('.img-left-side').click(function (event) {
     var userValuedFlag = data_return.user_valued;
     if (userValuedFlag == 1) {
       $('.left_controls span.common_value').css({ "display": "block" });
-      var imageValue = data_return.value;
+      var imageValue = 'Value:' + data_return.value;
       $('.image .image_display .image_user_value').append().html(imageValue);
       $('.image .image_display .image_diag').css({ "display": "none" });
       var imageCommonValue = data_return.common_ave_value;
@@ -157,7 +161,7 @@ $('.img-left-side').click(function (event) {
 });
 
 // AJAX call to next image list
-$('button.button__results.save').unbind("click").click(function (event) {
+$('div.button__results.save').unbind("click").click(function (event) {
   console.log("clicked: button__results.save: ");
   event.stopImmediatePropagation(); // would stop the event from bubbling to parent elements,
   // var displayValue = $('#chosen_value')[0].innerHTML;
@@ -175,7 +179,7 @@ $('button.button__results.save').unbind("click").click(function (event) {
     dataType: 'json'
   }).done(function (data_return) {
     console.log("success1c:  " + data_return.notice);
-    var userImageValue = data_return.user_value;
+    var userImageValue = 'Value:' + data_return.user_value;
     $('.image .image_display .image_user_value').append().html(userImageValue);
 
     var userValuedFlag = data_return.user_valued;

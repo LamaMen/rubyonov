@@ -10,12 +10,20 @@
           <%= render 'work/button_list_results' %>
         </div>
 
-        <span class="common_value" style="display: none;"><%= t('.common_value') %> <h2 class="common" title="Common value"></h2> </span>
-        <span class="total_values"><%= t('.total_values') %> <h2 class="total" title="Total values"><%= @values_qty.round %></h2></span>
+        <span class="common_value" style="display: none;">
+          <%= t('.common_value') %>
+            <h2 class="common" title="Common value"></h2>
+        </span>
+        <span class="total_values">
+          <%= t('.total_values') %>
+            <h2 class="total" title="Total values">
+              <%= @values_qty.round %>
+            </h2>
+        </span>
       </div>
     </div>
     <div class="col-md-9">
-      <div class="image_display">
+      <div class="image_display" >
         <div class="row image">
           <div class="col-md-12">
             <h2 class="up-theme" title="theme_name">
@@ -27,25 +35,60 @@
               <%= @selected_image_name %>
             </h2>
           </div>
-          <div class="col-md-1">
-            <div class="img-left-side">
+          <div class="col-md-1" >
+            <div class="img-left-side" style="display: none;">
               <h3 title="list to previous image">
                 <i class="fa fa-chevron-circle-left strong"></i>
               </h3>
             </div>
           </div>
-          <div class="col-md-10">
-            <div class="img-center" title="Default image">
+          <div class="col-md-10" >
+            <div class="img-center" title="Default image" style="display: none;">
               <img alt="Default Image" title="Default image" src="/assets/pictures/honor_8x.jpg"
-                style="object-fit: contain; height: 60vh; width: 100%;" />
+                style="object-fit: contain; height: 45vh; width: 100%;" />
             </div>
-            <!-- <div class="image_user_value" title="Expert value"></div> -->
+            <h3 class="image_user_value" title="Expert value"></h3>
           </div>
-          <div class="col-md-1">
-            <div class="img-right-side">
+          <div class="col-md-1" >
+            <div class="img-right-side" style="display: none;">
               <h3 title="list to next image">
                 <i class="fa fa-chevron-circle-right"></i>
               </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row diag my-3">
+          <div class="col-md-12">
+            <div class="image_diag" style="display: none;">
+              <div class="row">
+                <div class="col-md-1">
+                  <h4 id="chosen_value">
+                    50
+                  </h4>
+                </div>
+                <div class="col-md-5">
+                  <h5 class="down" title="Value scale">
+                    <%= t(".make_decision") %>
+                  </h5>
+                </div>
+                <div class="col-md-6">
+                  <div class="button__results save btn btn-secondary" title="Save image diag results">
+                    <%= t(".save_decision") %>
+                  </div>
+                </div>
+
+                <div class="col-md-1 text-end">
+                  5%
+                </div>
+                <div id="slider" class="col-md-4">
+                  <input id="slide" type="range" class="form-range" value="50" min="5" max="100" step="5"
+                    onchange="updateSlider(this.value)" />
+                </div>
+                <div class="col-md-1">
+                  100%
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -53,3 +96,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  function updateSlider(slideAmount) {
+    var displayValue = document.getElementById("chosen_value");
+    displayValue.innerHTML = slideAmount;
+  }
+</script>

@@ -41,17 +41,6 @@ ru:
 
     index:
       def_select_theme: "Выберите тему для оценки"
-
-    button_theme_select:
-      select_theme_bt: "выбрать тему"
-
-    button_list_results:
-      results_list: "результаты"
-
-    choose_theme_from_arr:
-      select_theme: "выберите тему"
-
-    images:
       common_value: "средняя оценка"
       total_values: "всего оценок"
 
@@ -61,6 +50,15 @@ ru:
       share_opinion: "Поделись своим мнением"
 
       theme_name: "Тема"
+
+    button_theme_select:
+      select_theme_bt: "выбрать тему"
+
+    button_list_results:
+      results_list: "результаты"
+
+    choose_theme_from_arr:
+      select_theme: "выберите тему"
 
     display_theme:
       select_theme: "Выберите тему для оценки"
