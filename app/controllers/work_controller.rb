@@ -41,7 +41,12 @@ class WorkController < ApplicationController
   def results_list
     @selected_theme_id = session[:selected_theme_id]
     
-    res_composite_diag = Image.where(theme_id: @selected_theme_id).order("ave_value DESC")
+    current_user_id = current_user.id
+    res_composite_diag = Image.joins(:value)
+      .select("images.name, images.created_at, images.file, values.value as user_value, values.created_at as mark_date, images.ave_value")
+      .where("images.theme_id = :theme_id AND values.user_id = :user_id AND value <= images.ave_value + 25 AND value >= images.ave_value - 25", { theme_id: @selected_theme_id, user_id: current_user_id } )
+      .order("value DESC")
+
     composite_results_size = res_composite_diag.size
     
     @composite_results = res_composite_diag.take(composite_results_size)

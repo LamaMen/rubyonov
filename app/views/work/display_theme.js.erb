@@ -11,15 +11,17 @@ $('.left_controls span.total_values h2.total').append().html(valuesQty);
 var userValuedFlag = '<%= @image_data[:user_valued] %>';
 if (userValuedFlag == 1) {
   $('.left_controls span.common_value').css({ "display": "block" });
-  var imageValue = '<%= @image_data[:value] %>';
-  $('.image .image_display .image_user_value').append().html(imageValue).css({ "display": "block" });
+  var imageValue = data_return.value;
+  $('.left_controls span.current_value .current').append().html(imageValue);
+  $('.left_controls span.current_value').css({ "display": "block" });
+
   $('.image .image_display .image_diag').css({ "display": "none" });
 
   var imageCommonValue = '<%= @image_data[:common_ave_value] %>';
   $('.left_controls span.common_value h2.common').append().html(imageCommonValue);
 } else {
   $('.left_controls span.common_value').css({ "display": "none" });
-  $('.image .image_display .image_user_value').css({ "display": "none" });
+  $('.left_controls span.current_value').css({ "display": "none" });
   $('.image .image_display .image_diag').css({ "display": "block" });
 }
 
@@ -95,15 +97,19 @@ $('.img-right-side').click(function (event) {
     var userValuedFlag = data_return.user_valued;
     if (userValuedFlag == 1) {
       $('.left_controls span.common_value').css({ "display": "block" });
-      var imageValue = 'Value:' + data_return.value;
-      $('.image .image_display .image_user_value').append().html(imageValue).css({ "display": "block" });
+      
+      var imageValue = data_return.value;
+      $('.left_controls span.current_value .current').append().html(imageValue);
+      $('.left_controls span.current_value').css({ "display": "block" });
+      
       $('.image .image_display .image_diag').css({ "display": "none" });
 
       var imageCommonValue = data_return.common_ave_value;
       $('.left_controls span.common_value h2.common').append().html(imageCommonValue);
     } else {
       $('.left_controls span.common_value').css({ "display": "none" });
-      $('.image .image_display .image_user_value').css({ "display": "none" });
+      $('.left_controls span.current_value').css({ "display": "none" });
+
       $('.image .image_display .image_diag').css({ "display": "block" });
     }
 
@@ -141,18 +147,20 @@ $('.img-left-side').click(function (event) {
     var userValuedFlag = data_return.user_valued;
     if (userValuedFlag == 1) {
       $('.left_controls span.common_value').css({ "display": "block" });
-      var imageValue = 'Value:' + data_return.value;
-      $('.image .image_display .image_user_value').append().html(imageValue);
+      
+      var imageValue = data_return.value;
+      $('.left_controls span.current_value .current').append().html(imageValue);
+      $('.left_controls span.current_value').css({ "display": "block" });
+      
       $('.image .image_display .image_diag').css({ "display": "none" });
       var imageCommonValue = data_return.common_ave_value;
       $('.left_controls span.common_value h2.common').append().html(imageCommonValue);
-      $('.image .image_display .image_user_value').css({ "display": "block" });
     } else {
       $('.left_controls span.common_value').css({ "display": "none" });
-      console.log("7 IN ELSE: userValuedImage == false? == " + userValuedFlag);
-      $('.image .image_display .image_user_value').css({ "display": "none" });
-      $('.image .image_display .image_diag').css({ "display": "block" });
+      $('.left_controls span.current_value').css({ "display": "none" });
 
+      console.log("7 IN ELSE: userValuedImage == false? == " + userValuedFlag);
+      $('.image .image_display .image_diag').css({ "display": "block" });
     }
   })
     .fail(function (data_return) {
@@ -160,6 +168,7 @@ $('.img-left-side').click(function (event) {
     });
 });
 
+const user_value = '.image .image_display .image_user_value';
 // AJAX call to next image list
 $('div.button__results.save').unbind("click").click(function (event) {
   console.log("clicked: button__results.save: ");
@@ -179,8 +188,6 @@ $('div.button__results.save').unbind("click").click(function (event) {
     dataType: 'json'
   }).done(function (data_return) {
     console.log("success1c:  " + data_return.notice);
-    var userImageValue = 'Value:' + data_return.user_value;
-    $('.image .image_display .image_user_value').append().html(userImageValue);
 
     var userValuedFlag = data_return.user_valued;
     if (userValuedFlag === 1) {
@@ -195,9 +202,13 @@ $('div.button__results.save').unbind("click").click(function (event) {
       console.log("6 IN save_value: imageCommonValue = " + imageCommonValue);
       $('.left_controls span.common_value h2.common').append().html(imageCommonValue);
 
-      $('.image .image_display .image_user_value').css({ "display": "block" });
+      var imageValue = data_return.value;
+      $('.left_controls span.current_value .current').append().html(imageValue);
+      $('.left_controls span.current_value').css({ "display": "block" });
     } else {
       $('.left_controls span.common_value').css({ "display": "none" });
+      $('.left_controls span.current_value').css({ "display": "none" });
+
       console.log("7 IN ELSE: save_value userValuedImage == false? == " + userValuedFlag);
       $('.image .image_display .image_diag').css({ "display": "block" });
     }

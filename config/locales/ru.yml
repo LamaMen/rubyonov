@@ -43,6 +43,7 @@ ru:
       def_select_theme: "Выберите тему для оценки"
       common_value: "средняя оценка"
       total_values: "всего оценок"
+      current_value: "ваша оценка"
 
       make_decision: "Выберите свою оценку"
       save_decision: "сохранить"
@@ -63,13 +64,11 @@ ru:
     display_theme:
       select_theme: "Выберите тему для оценки"
 
-
     results_list:
       no_values: "Результаты по выбранной теме отсутствуют..."
       select_theme: "Выберите другую тему"
       return_to_main: "На главную"
-
-      page_title: "Перейдите к выбору темы"
+      page_title: "Все ваши оценки"
 
   main:
     about:
