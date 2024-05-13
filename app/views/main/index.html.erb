@@ -1,8 +1,8 @@
 <div class="center jumbotron">
-    <h1>Добро пожаловать в Experteese</h1>
+    <h1 class="pb-5"><%= t(".title")%></h1>
     <% if signed_in? %>
-        <%= link_to "Экспертиза" , work_path, class: "btn btn-lg btn-primary" %>
+        <%= link_to t(".start") , work_path, class: "btn btn-lg btn-primary px-4" %>
     <% else %>
-        <%= link_to "Регистрация" , signup_path, class: "btn btn-lg btn-primary" %>    
+        <%= link_to t(".register") , signup_path, class: "btn btn-lg btn-primary px-4" %>    
     <% end %>
 </div>

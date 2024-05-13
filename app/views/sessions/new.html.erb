@@ -1,18 +1,18 @@
 <main class="form-signin w-100 m-auto">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    <h1 class="h3 mb-3 fw-normal"><%= t(".sign_in") %></h1>
 
     <%= form_for(:session, url: sessions_path) do |form| %>
 
         <div class="form-floating">
             <%= form.text_field :email, type: "email" , class: "form-control" , placeholder: "name@example.com" %>
-            <%= form.label :email, "Email address" %>
+            <%= form.label :email, t(".email") %>
         </div>
 
         <div class="form-floating">
             <%= form.text_field :password, type: "password" , class: "form-control" , placeholder: "Password" %>
-            <%= form.label :password, "Password" %>
+            <%= form.label :password, t(".password") %>
         </div>
 
-        <%= form.submit "Sign in", class: "btn btn-primary w-100 py-2" %>
+        <%= form.submit t(".sign_in"), class: "btn btn-primary w-100 py-2" %>
     <% end %>
 </main>

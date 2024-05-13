@@ -8,10 +8,10 @@ ru:
       sign_up: "Зарегистрироваться"
       sign_out: "Выйти"
       profile: "Моя страница"
-      footer:
-      about: "О сайте"
-      contact: "Контакты"
-      dev_msg: "Сайт в разработке"
+
+    footer:
+      home: "Главная"
+      help: "Помощь"
 
   sessions:
     new:
@@ -27,7 +27,7 @@ ru:
       email: "E-mail"
       password: "Пароль"
       password_confirmation: "Подтверждение пароля"
-      create_account: "Создать мой аккаунт"
+      create_account: "Создать аккаунт"
 
     new:
       new_user_sign_up: "Регистрация нового пользователя"
@@ -71,10 +71,11 @@ ru:
       page_title: "Все ваши оценки"
 
   main:
-    about:
-      about_title: "О сайте"
-
-    contacts:
-      contacts_title: "Контакты"
+    index:
+      title: "Добро пожаловать в rubyonov"
+      start: "Начать"
+      register: "Регистрация"
+    help:
+      title: "Помощь"
 
 

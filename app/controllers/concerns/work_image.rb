@@ -12,6 +12,7 @@ module WorkImage extend ActiveSupport::Concern
         logger.info "Images = #{theme_images.inspect} "
         
         one_image_attr = theme_images[image_index].attributes
+        file = helpers.asset_path("pictures/#{one_image_attr["file"]}")
         logger.info "In show_image: one_image_attr = #{one_image_attr.inspect} "
         
         image_id = one_image_attr["id"]
@@ -43,7 +44,8 @@ module WorkImage extend ActiveSupport::Concern
                 images_arr_size: theme_images.size,
                 image_id: image_id,
                 name: one_image_attr["name"],
-                file: one_image_attr["file"],
+                # file: one_image_attr["file"],
+                file: file,
                 user_valued: user_valued,
                 value: value,
                 common_ave_value: common_ave_value

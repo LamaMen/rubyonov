@@ -18,28 +18,28 @@
 
   <div class="row g-3">
     <div class="col-12">
-      <%= form.label :name, "First name", class: "form-label" %>
+      <%= form.label :name, t(".name"), class: "form-label" %>
       <%= form.text_field :name, class: "form-control", type: "text", placeholder: "", value: "" %>
     </div>
 
     <div class="col-12">
-      <%= form.label :email, "Email", class: "form-label" %>
+      <%= form.label :email, t(".email"), class: "form-label" %>
       <%= form.text_field :email, class: "form-control", type: "email", placeholder: "you@example.com" %>
     </div>
 
     <div class="col-6">
-      <%= form.label :password, "Password", class: "form-label" %>
+      <%= form.label :password, t(".password"), class: "form-label" %>
       <%= form.text_field :password, class: "form-control", type: "password", placeholder: "" %>
     </div>
 
     <div class="col-6">
-      <%= form.label :password_confirmation, "Confirmation", class: "form-label" %>
+      <%= form.label :password_confirmation, t(".password_confirmation"), class: "form-label" %>
       <%= form.text_field :password_confirmation, class: "form-control", type: "password", placeholder: "" %>
     </div>
 
 
     <hr class="my-4">
-    <%= form.submit "Sign Up", class: "w-100 btn btn-primary btn-lg" %>
+    <%= form.submit t(".create_account"), class: "w-100 btn btn-primary btn-lg" %>
 <% end %>
 
 

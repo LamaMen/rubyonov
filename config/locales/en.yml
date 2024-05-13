@@ -57,7 +57,7 @@ en:
       email: "E-mail"
       password: "Password"
       password_confirmation: "Password confirmation"
-      create_account: "Create my account"
+      create_account: "Create account"
 
     new:
       new_user_sign_up: "New user sign up"
@@ -106,8 +106,10 @@ en:
       page_title: "All your ratings"
 
   main:
-    about:
-      about_title: "About"
 
-    contacts:
-      contacts_title: "Contacts"
+    index:
+      title: "Welcome torubyonov"
+      start: "Start"
+      register: "Registration"
+    help:
+      title: "Help"

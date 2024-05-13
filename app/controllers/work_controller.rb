@@ -23,7 +23,7 @@ class WorkController < ApplicationController
       theme_id = 1
       values_qty = Value.all.count.round
       data = { index: 0, name: '', values_qty: values_qty,
-               file: 'honor_8x.jpg', image_id: 4,
+               file: helpers.asset_path("pictures/honor_8x.jpg"), image_id: 4,
                current_user_id: current_user_id, user_valued: false,
                common_ave_value: 0, value: 0 }
     else
