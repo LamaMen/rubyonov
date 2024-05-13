@@ -11,11 +11,6 @@
 User.delete_all
 User.reset_pk_sequence
 
-User.create!([{
-    name: "Ilia",
-    email: "ilia@mail.ru"
-  }])
-
 Theme.delete_all
 Theme.reset_pk_sequence
 Theme.create([
